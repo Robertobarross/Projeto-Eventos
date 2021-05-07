@@ -1,0 +1,5 @@
+/* estilo das páginas do projeto */
+.titulo{font-size: 30px; font-family: Arial;}/* Estilo dos titulos */
+.texto{font-size: 15px; font-family: Arial;} /* Estilo dos textos */
+.logo{width: 50px;} /* Estilo da logo navbar */
+
