@@ -27,7 +27,7 @@
             <ul class="navbar-nav">
                <li class="nav.item">
                     <a href="/" class="nav link">Eventos</a>
-                    <a href="/" class="nav link">Criar Eventos</a>
+                    <a href="eventos/create" class="nav link">Criar Eventos</a>
                     <a href="/" class="nav link">Entrar</a>
                     <a href="/" class="nav link">Cadastrar</a>
                     <a href="contato" class="nav link">Contato</a>
@@ -37,11 +37,13 @@
             </nav>
         </header>
 
-        @yield('content')
-        <footer>
+        @yield('content'){{--Aqui é onde vai aparecer o conteúdo--}}
+
+        <footer>{{--Aqui é o rodapé--}}
         <p class="texto">Projeto-Eventos &COPY; 2021</p>
         </footer>
 
-
+        {{--Link de ícones--}}
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     </body>
 </html>
