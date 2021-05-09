@@ -3,3 +3,50 @@
 .texto{font-size: 15px; font-family: Arial;} /* Estilo dos textos */
 .logo{width: 50px;} /* Estilo da logo navbar */
 
+body{min-height: 100vh; padding-bottom: 100px;position: relative;}
+
+header{background-color: #fff; border-bottom: 1px solid #ccc;}
+
+.row{margin: 0;}
+
+.container-fluid{padding: 0;}
+
+.btn-primary{background-color: #f2a340; border: 2px solid#c28008;}
+
+.btn-primary:hover{background-color: #c28008; border-color: #c28008;}
+
+#navbar img {width: 40px;}
+
+#navbar{justify-content: space-between; background-color: #fff; padding: 5px 0;}
+
+#navbar a{font-size: 14px; color: #757575; text-decoration: none;}
+#navbar a:hover{color: #f2a340;}
+
+#search-container{background-image: url('../img/img-evento.jpg'); background-size: cover; background-position: center; height: 400px; padding: 50px; text-align: center;}
+
+h1{color: gray;}
+
+#search-container h1{color: #f2a340; margin-bottom: 30px; font-weight: 900;}
+
+#search-container form{width: 50%; margin: auto;}
+
+#eventos-container {padding: 50px;}
+
+#eventos-container h2{margin-bottom: 10px;}
+
+#eventos-container .subtitulo{color: #757575; margin-bottom: 30px;}
+
+#cards-container{display: flex;}
+
+#eventos-container .card{flex: 1 1 0; max-width: 25%; border-radius: 10px; margin: 5px;}
+
+#eventos-container img{max-height: 150px; border-bottom-left-radius: 10px; border-top-right-radius: 10px;}
+
+.card .card-date{font-size: 12px; color: #ccc;}
+
+.card .card-title{color: #212121; font-size: 20px; font-weight: bold; margin-bottom: 30px;}
+
+.card-participantes{font-size: 14px; color: #757575;}
+
+footer{text-align: center; background-color: #353e35; color: #fff; padding: absolute; bottom: 0; width: 100%; min-height: 100px; }
+
