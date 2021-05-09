@@ -31,7 +31,7 @@
                     <a href="/" class="nav link">Entrar</a>
                     <a href="/" class="nav link">Cadastrar</a>
                     <a href="contato" class="nav link">Contato</a>
-                </li>
+               </li>
             </ul>
             </div>
             </nav>
@@ -40,7 +40,7 @@
         @yield('content'){{--Aqui é onde vai aparecer o conteúdo--}}
 
         <footer>{{--Aqui é o rodapé--}}
-        <p class="texto">Projeto-Eventos &COPY; 2021</p>
+        <p class="texto2">Projeto-Eventos &COPY; 2021</p>
         </footer>
 
         {{--Link de ícones--}}
