@@ -5,10 +5,33 @@
 @section('content'){{--Extenção do arquivo template--}}
 
         <h1 class="titulo">Home aula 14</h1>
-        <img src="img/img-event.jpg" alt="banner">
 
-        @foreach ($eventos as $evento)
-        <p>{{ $evento->titulo }} -- {{ $evento->descricao }} -- {{ $evento->cidade }}</p>{{--Declarando variáveis na página home--}}
-        @endforeach
+        <div id="search-container" class="col-md-12">
+               <h1>Busque um evento</h1>
+               <form action="">
+               <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+               </form>
+        </div>
+
+        <div id="eventos-container" class="col-md-12">
+                <h2>Proximos eventos</h2>
+                <p class="subtitulo">Veja os eventos dos próximos dias!</p>
+                <div id="cards-container" class="row">
+                    @foreach ($eventos as $evento)
+                    <div class="card col-md-2">
+                        <img src="img/img-event.jpg" alt="{{ $evento->titulo }}">
+                        </div>
+                        <div class="card-body">
+                        <p class="card-date">08/05/2021</p>
+                        <h5 class="card-title">{{ $evento->titulo }}</h5>
+                        <p class="card-participantes">X participantes</p>
+                        <a href="#" class="btn btn-primary">saber mais</a>
+                        </div>
+                        </div>
+                    @endforeach
+                </div>
+        </div>
+
+
 
 @endsection {{--Extenção do arquivo template--}}
