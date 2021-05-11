@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Evento; // Incluindo Model Evento //
+use Input;
 
 class EventoController extends Controller
 {
     public function index(){ // Rota da página principal, "Home" //
         $eventos = Evento::all(); // Pegando arquivos do bd, tabela eventos//
-        return view('home', ['eventos' => $eventos]); // Desclando variáveis //
-}
+
+    return view('home', ['eventos' => $eventos]); // Desclarando variáveis //
+    }
+
 
     public function create(){ // Rota da página criar eventos //
         return view('eventos.create');
+
     }
 
 
@@ -27,7 +31,7 @@ class EventoController extends Controller
 
         $evento->save();
 
-      //  return redirect('/create');
+        return redirect('/home');
 
     }
 }
