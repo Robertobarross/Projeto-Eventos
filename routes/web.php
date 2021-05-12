@@ -7,12 +7,12 @@ Rotas da aplicação. Tem conexão direta com a pasta resources/views.
 Na pasta Public foi criado as pastas css, img e js.
 */
 
-use App\Http\Controllers\EventoController;
+use App\Http\Controllers\EventController;
 //use App\http\Models\Evento;
 
-Route::get('/', [EventoController::class, 'index']); // Rota Controller da página Home //
-Route::get('/eventos/create', [EventoController::class, 'create']); // Rota Controller criar eventos
-Route::post('/eventos', [EventoController::class, 'store']);
+Route::get('/', [EventController::class, 'index']); // Rota Controller da página Home //
+Route::get('/events/create', [EventController::class, 'create']); // Rota Controller criar eventos
+Route::post('/events', [EventController::class, 'store']);
 
 Route::get('/contato', function () { // Rota da página de contatos //
         return view('contato');
