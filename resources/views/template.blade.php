@@ -27,7 +27,7 @@
             <ul class="navbar-nav">
                <li class="nav.item">
                     <a href="/" class="nav link">Eventos</a>
-                    <a href="eventos/create" class="nav link">Criar Eventos</a>
+                    <a href="events/create" class="nav link">Criar Eventos</a>
                     <a href="/" class="nav link">Entrar</a>
                     <a href="/" class="nav link">Cadastrar</a>
                     <a href="contato" class="nav link">Contato</a>
