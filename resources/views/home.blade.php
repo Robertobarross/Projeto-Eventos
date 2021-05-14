@@ -4,7 +4,7 @@
 
 @section('content'){{--Extenção do arquivo template--}}
 
-        <h1 class="titulo">Home aula 14</h1>
+        <h1 class="titulo">Home aula 19</h1>
 
         <div id="search-container" class="col-md-12">
                <h1>Busque um evento</h1>
@@ -19,13 +19,13 @@
                 <div id="cards-container" class="row">
                     @foreach ($events as $event)
                     <div class="card col-md-2">
-                        <img src="img/img-event.jpg" alt="{{ $event->titulo }}">
+                        <img src="/img/events/{{ $event->image }}" alt="{{ $event->titulo }}">{{--img/img-event.jpg--}}
                         </div>
                         <div class="card-body">
-                        <p class="card-date">08/05/2021</p>
+                        <p class="card-date"></p>
                         <h5 class="card-title">{{ $event->titulo }}</h5>
                         <p class="card-participantes">X participantes</p>
-                        <a href="#" class="btn btn-primary">saber mais</a>
+                        <a href="/events/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
                         </div>
                         </div>
                     @endforeach
