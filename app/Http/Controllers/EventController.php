@@ -25,12 +25,30 @@ class EventController extends Controller
         $event = new Event();
 
         $event->titulo = $request->titulo;
-        $event->descricao = $request->descricao;
+        $event->informe = $request->informe;
         $event->cidade = $request->cidade;
         $event->privado = $request->privado;
 
-        $event->save();
+        // Fazeno uplowads da imagem no banco de dados //
+        if($request->hasFile('image') ** $request->file('image')->isValid()){
+            $requestImage = $request->image;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+            $requestImage->move(public_path('img/events'), $imageName);
+            $event->image = $imageName;
+        }
 
-        return redirect('/home');
+        $event->save();// Para que a postagem fique gravada no banco de dados //
+
+        /* Após a postagem, o usuário será redirecionado para página criar eventos. Aparecerá a mensagem 'Evento criado com sucesso!'  */
+        return redirect('/events/create')->with('msg', 'Evento criado com sucesso!');
     }
+
+    public function show($id){
+        $event = Event::findOrFail($id);
+        return view('events.show', ['event' => $event]);
+
+    }
+
 }
+
