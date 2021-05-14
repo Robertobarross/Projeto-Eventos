@@ -37,7 +37,15 @@
             </nav>
         </header>
 
-        @yield('content'){{--Aqui é onde vai aparecer o conteúdo--}}
+
+        <div class="texto">
+            {{--Mensagem de criação do evento. Conexão com EventController.php--}}
+            @if (session('msg'))
+            <p class="msg">{{ session('msg') }}</p>
+            @endif
+
+            @yield('content'){{--Aqui é onde vai aparecer o conteúdo--}}
+        </div>
 
         <footer>{{--Aqui é o rodapé--}}
         <p class="texto2">Projeto-Eventos &COPY; 2021</p>
