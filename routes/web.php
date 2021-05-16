@@ -11,10 +11,14 @@ use App\Http\Controllers\EventController;
 //use App\http\Models\Evento;
 
 Route::get('/', [EventController::class, 'index']); // Rota Controller da página Home //
-Route::get('/events/create', [EventController::class, 'create']); // Rota Controller criar eventos //
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth'); // Rota Controller criar eventos //
 Route::get('/events/{id}', [EventController::class, 'show']); // Rota Controller show //
 Route::post('/events', [EventController::class, 'store']); // Rota Controller das postagens //
 
 Route::get('/contato', function () { // Rota da página de contatos //
         return view('contato');
     });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
