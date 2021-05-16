@@ -22,14 +22,29 @@
             <nav class="navbar navbar-expand-lg navbar-ligth">
             <div class="collapse.navbar-collpase" id="navbar">
             <a href="/" class="navbar-brand">
-            <img src="img/logo.png" class="logo" alt="Projeto-Eventos">
+            <img src="/img/logo.png" class="logo" alt="Projeto-Eventos">
             </a>
             <ul class="navbar-nav">
-               <li class="nav.item">
+                <li class="nav.item">
                     <a href="/" class="nav link">Eventos</a>
                     <a href="events/create" class="nav link">Criar Eventos</a>
-                    <a href="/" class="nav link">Entrar</a>
-                    <a href="/" class="nav link">Cadastrar</a>
+
+                    @auth {{--Arquivo logout, para encerrar a sessão--}}
+                    <a href="/dashboard" class="nav link">Meus eventos</a>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <a href="/logout"
+                        class="nav-link"
+                        onclick="event.preventDefault();
+                        this.closest('form').submit();">Sair</a>
+                    </form>
+                    @endauth
+
+                    @guest {{--Links para login e cadastro--}}
+                    <a href="/login" class="nav link">Entrar</a>
+                    <a href="/register" class="nav link">Cadastrar</a>
+                    @endguest
+
                     <a href="contato" class="nav link">Contato</a>
                </li>
             </ul>
