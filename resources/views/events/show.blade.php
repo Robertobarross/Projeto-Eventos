@@ -9,16 +9,24 @@
         <div id="image-container" class="col-md-6">
             <img src="/img/events/{{ $event->image }}" class="img-fluid" alt="{{ $event->titulo }}">
         </div>
+
         <div id="info-container" class="col-md-6">
             <h1>{{ $event->titulo }}</h1>
             <p class="event-cidade"><icon-icon name="location-outline">{{ $event->cidade }}</icon-icon></p>
             <p class="events-participants"><icon-icon name="people-outline"></icon-icon> X participantes </p>
             <p class="event-owner"><icon-icon name="star-outline"></icon-icon> Dono do Evento </p>
             <a href="#" class="btn btn-primary" id="event-submit"> Confirmar Presença </a>
+            <h3>O evento conta com:</h3>
+            <ul id="itens-list">
+                @foreach ($event->itens as $item )
+                <li><icon-icon name="play-outline"></icon-icon><span>{{ $item }}<span></li>
+                @endforeach
+            </ul>
         </div>
+        
         <div class="col-md-12" id="description-container">
             <h3>Sobre o Evento:</h3>
-            <p class="event-description">{{ $event->description }}</p>
+            <p class="event-description">{{ $event->informe }}</p>
         </div>
     </div>
 </div>
