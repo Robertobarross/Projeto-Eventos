@@ -9,9 +9,19 @@ use Input;
 class EventController extends Controller
 {
     public function index(){ // Rota da página principal, "Home" //
-        $events = Event::all(); // Pegando arquivos do bd, tabela events//
 
-    return view('home', ['events' => $events]); // Desclarando variáveis //
+        $search = request('search');
+        if($search){
+            $events = Event::where([
+                ['titulo', 'like', '%' .$search. '%']
+            ])->get();
+
+        } else {
+            $events = Event::all(); // Pegando arquivos do bd, tabela events//
+        }
+
+
+    return view('home', ['events' => $events, 'search' => $search]); // Desclarando variáveis //
     }
 
 
@@ -25,9 +35,11 @@ class EventController extends Controller
         $event = new Event();
 
         $event->titulo = $request->titulo;
+        $event->date = $request->date;
         $event->informe = $request->informe;
         $event->cidade = $request->cidade;
         $event->privado = $request->privado;
+        $event->itens = $request->itens;
 
         // Fazeno uplowads da imagem no banco de dados //
         if($request->hasFile('image') ** $request->file('image')->isValid()){
@@ -37,6 +49,10 @@ class EventController extends Controller
             $requestImage->move(public_path('img/events'), $imageName);
             $event->image = $imageName;
         }
+
+        $user = auth()->user(); // Para separar evento por usuário //
+        $event->user_id = $user->id;
+
 
         $event->save();// Para que a postagem fique gravada no banco de dados //
 
