@@ -1,15 +1,38 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('template'){{--Extenção do arquivo template--}}
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+@section('title', 'Dashboard'){{--Extenção do arquivo template--}}
+
+@section('content'){{--Extenção do arquivo template--}}
+
+<div class="col-md-10 offset-md-1 dashboard-title-container">
+    <h1>Meus eventos</h1>
+</div>
+
+<div class="col-md-10 offser-md-1 dashboard-events-container">
+    @if(count($events) > 0)
+    @else
+    <p>Você ainda não tem eventos, <a href="/events/create">Criar evento</a></p>
+    @endif
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Participantes</th>
+                <th scope="col">Açoes</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody>
+
+        <tr>
+            <th scope="row"></th>
+            <td><a href=""</a></td>
+        </tr>
+
+    </tbody>
+
+</div>
+
+@endsection {{--Extenção do arquivo template--}}
