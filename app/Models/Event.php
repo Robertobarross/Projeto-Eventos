@@ -14,7 +14,9 @@ class Event extends Model
 
     protected $dates = ['date']; // É necessário informar que o campo data foi criado //
 
-    public function user(){
+    protected $guarded = []; // Necessário para rota update //
+
+    public function user(){ // É necessário informar que o login de usuário foi criado //
         return $this->belongsTo('App\Models\user');
     }
 }
