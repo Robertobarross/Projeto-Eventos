@@ -4,7 +4,7 @@
 
 @section('content'){{--Extenção do arquivo template--}}
 
-        <h1 class="titulo">Home aula 28</h1>
+        <h1 class="titulo">Home aula 29</h1>
 
         <div id="search-container" class="col-md-12">
             <h1>Busque um evento</h1>
@@ -29,7 +29,7 @@
                         <div class="card-body">
                         <p class="card-date">{{ date('d/m/y', strtotime($event->date)) }}</p>
                         <h5 class="card-title">{{ $event->titulo }}</h5>
-                        <p class="card-participantes">X participantes</p>
+                        <p class="card-participantes"> {{ count($event->users) }} Participantes</p>
                         <a href="/events/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
