@@ -13,9 +13,14 @@
         <div id="info-container" class="col-md-6">
             <h1>{{ $event->titulo }}</h1>
             <p class="event-cidade"><icon-icon name="location-outline">{{ $event->cidade }}</icon-icon></p>
-            <p class="events-participants"><icon-icon name="people-outline"></icon-icon> X participantes </p>
+            <p class="events-participants"><icon-icon name="people-outline"> {{ count($event->users) }} Participantes </p>
             <p class="event-owner"><icon-icon name="star-outline"></icon-icon>Dono do evento: {{ $eventOwner['name'] }} </p>
-            <a href="#" class="btn btn-primary" id="event-submit"> Confirmar Presença </a>
+
+            <form action="/events/join/{{ $event->id }}" method="POST">
+                @csrf
+                <a href="/events/join/{{ $event->id }}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault();this.closest('form').submit();"> Confirmar Presença </a>
+            </form>
+
             <h3>O evento conta com:</h3>
             <ul id="itens-list">
                 @foreach ($event->itens as $item )
