@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\This;
 
 class Event extends Model
 {
@@ -18,5 +19,10 @@ class Event extends Model
 
     public function user(){ // É necessário informar que o login de usuário foi criado //
         return $this->belongsTo('App\Models\user');
+    }
+
+    public function users(){
+        return $this->belongsToMany('App\Models\User');
+
     }
 }
