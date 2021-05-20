@@ -59,7 +59,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function events(){
+    public function events(){ // Conexão com a migration event_user, confirmar presença no evento //
         return $this->hasMany('App\Models\Event');
+    }
+
+    public function eventsAsParticipant(){ // Conexão com a migration event_user, confirmar presença no evento //
+        return $this->belongsToMany('App\Models\Event');
     }
 }
