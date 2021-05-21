@@ -16,10 +16,14 @@
             <p class="events-participants"><icon-icon name="people-outline"> {{ count($event->users) }} Participantes </p>
             <p class="event-owner"><icon-icon name="star-outline"></icon-icon>Dono do evento: {{ $eventOwner['name'] }} </p>
 
+            @if(!$hasUserJoined)
             <form action="/events/join/{{ $event->id }}" method="POST">
                 @csrf
                 <a href="/events/join/{{ $event->id }}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault();this.closest('form').submit();"> Confirmar Presença </a>
             </form>
+            @else
+                <p class="already-joined-msg">Você já está participando do evento!</p>
+            @endif
 
             <h3>O evento conta com:</h3>
             <ul id="itens-list">
