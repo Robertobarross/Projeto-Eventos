@@ -4,7 +4,7 @@
 
 @section('content'){{--Extenção do arquivo template--}}
 
-        <h1 class="titulo">Home aula 29</h1>
+        <h1 class="titulo">Home Eventos</h1>
 
         <div id="search-container" class="col-md-12">
             <h1>Busque um evento</h1>
